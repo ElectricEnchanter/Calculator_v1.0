@@ -31,9 +31,6 @@ void pushOp(Operations **head, char data);
 double popNum(Numbers **head);
 char popOp(Operations **head);
 
-
-double loan(double restSum, int month, double stavka, int type);
-double loanOverpayment(double monthlyPayment, int month, double stavka, double restSum, int type);
 void differential (double stavka, double ostat, double procPer);
 void annuity (double stavka, double ostat, double mesProc, double procPer);
 

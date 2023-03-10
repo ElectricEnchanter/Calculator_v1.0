@@ -7,6 +7,8 @@
 #include <QVector>
 #include <QtMath>
 
+#include "ui_loancalc.h"
+
 namespace Ui {
 class loanCalc;
 }
@@ -21,6 +23,9 @@ class loanCalc : public QMainWindow {
  public:
   explicit loanCalc(QWidget *parent = nullptr);
   ~loanCalc();
+  int a;
+  QCPBars *procents;
+  QCPBars *restSum;
 
  private slots:
 

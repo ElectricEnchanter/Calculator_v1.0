@@ -68,7 +68,10 @@ void MainWindow::on_Graph_clicked() {
   dialog.exec();
 }
 
-void MainWindow::on_Credit_clicked() { loanCalc.show(); }
+void MainWindow::on_Credit_clicked() {
+  loanCalc.setWindowTitle("КРЕДИТ ДУРНОЙ");
+  loanCalc.show();
+}
 
 void MainWindow::on_Deposit_clicked() {
   ui->input->setText("Функция в разработке, допилим позже😭");

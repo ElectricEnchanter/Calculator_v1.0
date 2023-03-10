@@ -346,29 +346,6 @@ char popOp(Operations **head) {
   return res;
 }
 
-double loan(double restSum, int month, double stavka, int type){
-  double monthlyInterRate = stavka / (100 * 12);
-  double monthlyPayment = 0;
-  double monthlyOverpayment = 0;
-  if (type == 0){
-    monthlyPayment = restSum * (monthlyInterRate / (1 - pow((1 + monthlyInterRate), -1 * month)));
-  }
-  if (type == 1){
-    monthlyPayment = restSum / month;
-  }
-  return monthlyPayment;
-}
-
-double loanOverpayment (double monthlyPayment, int month, double stavka, double restSum, int type){
-  double monthlyOverpayment = 0;
-  if (type == 0) monthlyOverpayment = (monthlyPayment * month) - restSum;
-  if (type == 1) {
-    monthlyOverpayment = (restSum * (stavka/ 100) * 31) / 365;
-    monthlyPayment += monthlyOverpayment;
-  }
-  return monthlyOverpayment;
-}
-
 
 void differential (double stavka, double ostat, double procPer){
     double platOsnDolg = ostat / procPer;
@@ -396,7 +373,7 @@ void differential (double stavka, double ostat, double procPer){
         ostat -= platOsnDolg;
     }
     
-    printf("\nѕлатеж мес: %.2f\n", platOsnDolg);
+    printf("\nПлатеж мес: %.2f\n", platOsnDolg);
     printf("ѕереплата: %.2f\n", dolg);
     printf("ƒолг + проценты: %.2f\n", dolg + ostat2);
     
