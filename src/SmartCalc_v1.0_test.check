@@ -1,0 +1,769 @@
+#include <math.h>
+#include "SmartCalc_v1.0.h"
+
+#test Validator_test1
+
+char string[255] = {"sin(1)*2"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 0;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test2
+
+char string[255] = {"9%2"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 0;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test3
+
+char string[255] = {"3.4+sin(3.55)"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 0;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test4
+
+char string[255] = {"sin(3.55)"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 0;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test5
+
+char string[255] = {"-1.5323/1(cos(3.2)+3)+1"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 0;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test6
+
+char string[255] = {"sqrt(9)"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 0;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test7
+
+char string[255] = {"2+"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 4;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test8
+
+char string[255] = {"2. 2"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 1;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test9
+
+char string[255] = {"2.233.4+5"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 1;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test10
+
+char string[255] = {"2.233.4+5(4/3"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 2;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+#test Validator_test11
+
+char string[255] = {"2.233.4+sin()+3"};
+char output[255] = {};
+int my_error = 0;
+int result_error = 3;
+
+my_error = Validator(string, output);
+ck_assert_int_eq(result_error, my_error);
+
+
+
+
+
+
+
+
+#test Count_test1
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"sqrt(9)"};
+char output[255] = {};
+double num = 0;
+double result_num = 3;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test2
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"3.4+sin(3.55)"};
+char output[255] = {};
+double num = 0;
+double result_num = 3.002851;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test3
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"9%2"};
+char output[255] = {};
+double num = 0;
+double result_num = 1;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test4
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"sin(1)*2"};
+char output[255] = {};
+double num = 0;
+double result_num = 1.682941;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test5
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"2*4+1"};
+char output[255] = {};
+double num = 0;
+double result_num = 9;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test6
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"4^3-2+2"};
+char output[255] = {};
+double num = 0;
+double result_num = 64;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test7
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"sqrt(9)"};
+char output[255] = {};
+double num = 0;
+double result_num = 3;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test8
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"1.53232+cos((1))"};
+char output[255] = {};
+double num = 0;
+double result_num = 2.072622;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test9
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"1.532327+cos((1))"};
+char output[255] = {};
+double num = 0;
+double result_num = 2.072629;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test10
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"1.53232/tan(1.5)"};
+char output[255] = {};
+double num = 0;
+double result_num = 0.108664;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+
+#test Count_test11
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"atan(34)^3"};
+char output[255] = {};
+double num = 0;
+double result_num = 3.662184;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test12
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"sqwr(36)-16"};
+char output[255] = {};
+double num = 0;
+double result_num = -10;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test13
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"6666*ln(20)"};
+char output[255] = {};
+double num = 0;
+double result_num = 19969.551335;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test14
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"acos(0.5)/6"};
+char output[255] = {};
+double num = 0;
+double result_num = 0.174532;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test15
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"6/acos(0.5)"};
+char output[255] = {};
+double num = 0;
+double result_num = 5.729577;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test16
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"log(4)/50*3"};
+char output[255] = {};
+double num = 0;
+double result_num = 0.036123;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test17
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"3*5^3"};
+char output[255] = {};
+double num = 0;
+double result_num = 375;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test18
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"5^3*3"};
+char output[255] = {};
+double num = 0;
+double result_num = 375;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+
+#test Count_test19
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"5-3*3"};
+char output[255] = {};
+double num = 0;
+double result_num = -4;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+
+#test Count_test20
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"5-3/3"};
+char output[255] = {};
+double num = 0;
+double result_num = 4;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test21
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"asin(1)/4"};
+char output[255] = {};
+double num = 0;
+double result_num = 0.392699;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test22
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"4/asin(1)"};
+char output[255] = {};
+double num = 0;
+double result_num = 2.546479;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test23
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"squre(525)+3"};
+char output[255] = {};
+double num = 0;
+double result_num = 25.912878;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test24
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"7/squre(525)"};
+char output[255] = {};
+double num = 0;
+double result_num = 0.305505;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+
+#test Count_test25
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"7/atan(525)"};
+char output[255] = {};
+double num = 0;
+double result_num = 4.461748;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+
+
+#test Count_test26
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"7/ln(525)"};
+char output[255] = {};
+double num = 0;
+double result_num = 1.117604;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+
+
+#test Count_test27
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"ln(5)^4"};
+char output[255] = {};
+double num = 0;
+double result_num = 6.709604;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test28
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"8^3-ln(37)"};
+char output[255] = {};
+double num = 0;
+double result_num = 508.389082;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+
+#test Count_test29
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"8^3-log(37)"};
+char output[255] = {};
+double num = 0;
+double result_num = 510.431798;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test32
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"6 - 5%4"};
+char output[255] = {};
+double num = 0;
+double result_num = 5;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test33
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"-1-(-3)"};
+char output[255] = {};
+double num = 0;
+double result_num = 2;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test34
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"-1-(+3)"};
+char output[255] = {};
+double num = 0;
+double result_num = -4;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test35
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"+1-(+3)"};
+char output[255] = {};
+double num = 0;
+double result_num = -2;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test36
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"+1+(+3)"};
+char output[255] = {};
+double num = 0;
+double result_num = 4;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test37
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"5(2+1)"};
+char output[255] = {};
+double num = 0;
+double result_num = 15;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test38
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"5(2-1)"};
+char output[255] = {};
+double num = 0;
+double result_num = 5;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test39
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"8^3-(2+6*8)"};
+char output[255] = {};
+double num = 0;
+double result_num = 462;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test40
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"8^3-(2+log(37))"};
+char output[255] = {};
+double num = 0;
+double result_num = 508.431798;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test41
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"sin(sin(2))"};
+char output[255] = {};
+double num = 0;
+double result_num = 0.789072;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
+
+#test Count_test42
+Numbers *NumHead = NULL;
+Operations *OpHead = NULL;
+
+char string[255] = {"cos(4)*sin((sin(4)))*tan(4)*ln(4)*log(10)"};
+char output[255] = {};
+double num = 0;
+double result_num = 0.720347;
+double X = 1;
+
+Validator(string, output);
+num = Count(output, &NumHead, &OpHead, X);
+
+
+ck_assert_double_eq_tol(num, result_num, 1e-6);
