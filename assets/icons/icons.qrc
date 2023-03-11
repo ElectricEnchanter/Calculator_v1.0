@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>backspace.png</file>
+        <file>monitoring.png</file>
+        <file>real_estate_agent.png</file>
+        <file>calculate.png</file>
+        <file>more_vert.png</file>
+        <file>outline_more_vert.png</file>
+    </qresource>
+    <qresource prefix="/buttons">
+        <file>0.jpeg</file>
+        <file>1.jpeg</file>
+        <file>2.jpeg</file>
+        <file>3.jpeg</file>
+        <file>4.jpeg</file>
+        <file>5.jpeg</file>
+        <file>6.jpeg</file>
+        <file>7.jpeg</file>
+        <file>8.jpeg</file>
+        <file>9.jpeg</file>
+    </qresource>
+    <qresource prefix="/sound">
+        <file>../Boy next door.mp3</file>
+        <file>../Iam cumming.mp3</file>
+        <file>../RIP EARS ORGASM.mp3</file>
+        <file>../come on college boy.mp3</file>
+        <file>../Fucking slaves get your ass back here.mp3</file>
+
+    </qresource>
+</RCC>

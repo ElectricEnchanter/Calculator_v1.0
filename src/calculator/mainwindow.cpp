@@ -5,6 +5,9 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
+  ui->groupBox->hide();
+  player = new QMediaPlayer;
+  audioOutput = new QAudioOutput;
 
   connect(ui->digit, &QButtonGroup::buttonClicked, this,
           &MainWindow::digit_click);
@@ -17,11 +20,19 @@ MainWindow::~MainWindow() { delete ui; }
 void MainWindow::digit_click(QAbstractButton *btm) {
   QString text = btm->text();
   ui->input->setText(ui->input->text() + text);
+  player->setAudioOutput(audioOutput);
+  player->setSource(QUrl("qrc:/sound/RIP EARS ORGASM.mp3"));
+  audioOutput->setVolume(50);
+  player->play();
 }
 
 void MainWindow::digit2_click(QAbstractButton *btm) {
   QString text = btm->text();
   ui->input->setText(ui->input->text() + text + '(');
+  player->setAudioOutput(audioOutput);
+  player->setSource(QUrl("qrc:/sound/Iam cumming.mp3"));
+  audioOutput->setVolume(50);
+  player->play();
 }
 
 void MainWindow::on_AC_clicked() {
@@ -71,6 +82,22 @@ void MainWindow::on_Graph_clicked() {
 void MainWindow::on_Credit_clicked() {
   loanCalc.setWindowTitle("КРЕДИТ ДУРНОЙ");
   loanCalc.show();
+  player->setAudioOutput(audioOutput);
+  player->setSource(
+      QUrl("qrc:/sound/Fucking slaves get your ass back here.mp3"));
+  audioOutput->setVolume(50);
+  player->play();
+}
+
+void MainWindow::on_pushButton_clicked() {
+  if (ui->pushButton->isChecked())
+    ui->groupBox->show();
+  else
+    ui->groupBox->hide();
+  player->setAudioOutput(audioOutput);
+  player->setSource(QUrl("qrc:/sound/come on college boy.mp3"));
+  audioOutput->setVolume(50);
+  player->play();
 }
 
 void MainWindow::on_Deposit_clicked() {

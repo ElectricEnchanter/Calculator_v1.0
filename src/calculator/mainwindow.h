@@ -5,7 +5,10 @@
 #include <loancalc.h>
 
 #include <QAbstractButton>
+#include <QAudioOutput>
 #include <QMainWindow>
+#include <QMediaPlayer>
+#include <QResource>
 #include <QVector>
 
 extern "C" {
@@ -23,6 +26,8 @@ class MainWindow : public QMainWindow {
 
  public:
   MainWindow(QWidget *parent = nullptr);
+  QMediaPlayer *player;
+  QAudioOutput *audioOutput;
   ~MainWindow();
 
  private slots:
@@ -41,9 +46,13 @@ class MainWindow : public QMainWindow {
 
   void on_Deposit_clicked();
 
+  void on_pushButton_clicked();
+
  private:
   Ui::MainWindow *ui;
   Dialog dialog;
   loanCalc loanCalc;
+ signals:
+  void aboba();
 };
 #endif  // MAINWINDOW_H
