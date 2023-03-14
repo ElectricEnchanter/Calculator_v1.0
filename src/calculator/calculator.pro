@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     ../SmartCalc_v1.0.c \
+    depcalc.cpp \
     graph.cpp \
     loancalc.cpp \
     main.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
     qcustomplot.cpp
 
 HEADERS += \
+    depcalc.h \
     graph.h \
     loancalc.h \
     mainwindow.h \
@@ -24,6 +26,7 @@ HEADERS += \
     qcustomplot.h
 
 FORMS += \
+    depcalc.ui \
     graph.ui \
     loancalc.ui \
     mainwindow.ui

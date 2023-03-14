@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <depcalc.h>
 #include <graph.h>
 #include <loancalc.h>
 
@@ -52,6 +53,7 @@ class MainWindow : public QMainWindow {
   Ui::MainWindow *ui;
   Dialog dialog;
   loanCalc loanCalc;
+  depcalc depCalc;
  signals:
   void aboba();
 };

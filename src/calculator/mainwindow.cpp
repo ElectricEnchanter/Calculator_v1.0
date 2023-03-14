@@ -82,11 +82,6 @@ void MainWindow::on_Graph_clicked() {
 void MainWindow::on_Credit_clicked() {
   loanCalc.setWindowTitle("КРЕДИТ ДУРНОЙ");
   loanCalc.show();
-  player->setAudioOutput(audioOutput);
-  player->setSource(
-      QUrl("qrc:/sound/Fucking slaves get your ass back here.mp3"));
-  audioOutput->setVolume(50);
-  player->play();
 }
 
 void MainWindow::on_pushButton_clicked() {
@@ -94,13 +89,9 @@ void MainWindow::on_pushButton_clicked() {
     ui->groupBox->show();
   else
     ui->groupBox->hide();
-  player->setAudioOutput(audioOutput);
-  player->setSource(QUrl("qrc:/sound/come on college boy.mp3"));
-  audioOutput->setVolume(50);
-  player->play();
 }
 
 void MainWindow::on_Deposit_clicked() {
-  ui->input->setText("Функция в разработке, допилим позже😭");
+  depCalc.setWindowTitle("Депозит ДУРНОЙ");
+  depCalc.show();
 }
-

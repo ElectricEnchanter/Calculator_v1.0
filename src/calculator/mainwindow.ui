@@ -308,41 +308,6 @@ border:none</string>
           </attribute>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QPushButton" name="AC">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
-            <italic>false</italic>
-            <bold>true</bold>
-            <kerning>true</kerning>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true"/>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="icon">
-           <iconset resource="../../assets/icons/icons.qrc">
-            <normaloff>:/icons/backspace.png</normaloff>:/icons/backspace.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>24</width>
-            <height>24</height>
-           </size>
-          </property>
-         </widget>
-        </item>
         <item row="2" column="2">
          <widget class="QPushButton" name="six">
           <property name="sizePolicy">
@@ -913,6 +878,32 @@ border:none</string>
           </attribute>
          </widget>
         </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="Deposit">
+          <property name="font">
+           <font>
+            <family>PT Sans Caption</family>
+            <pointsize>14</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #FFFFFF;
+background-color: #00796B</string>
+          </property>
+          <property name="text">
+           <string>Депозит</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>15</width>
+            <height>15</height>
+           </size>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
      </layout>
@@ -936,7 +927,7 @@ border:none</string>
     <item>
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
-       <string>                                       </string>
+       <string/>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,2,0">
        <item>
@@ -1230,7 +1221,13 @@ background-color: #00796B</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="Deposit">
+        <widget class="QPushButton" name="AC">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
@@ -1241,16 +1238,19 @@ background-color: #00796B</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true"/>
          </property>
          <property name="text">
-          <string>Депозит</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../../assets/icons/icons.qrc">
+           <normaloff>:/icons/backspace.png</normaloff>:/icons/backspace.png</iconset>
          </property>
          <property name="iconSize">
           <size>
-           <width>15</width>
-           <height>15</height>
+           <width>24</width>
+           <height>24</height>
           </size>
          </property>
         </widget>
