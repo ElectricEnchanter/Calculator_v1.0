@@ -14,20 +14,20 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1,0">
+   <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0">
     <item>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="8" column="1">
-       <widget class="QLabel" name="AccruedIntOutput">
+     <layout class="QGridLayout" name="gridLayout" columnstretch="0,2,2">
+      <item row="1" column="0">
+       <widget class="QLabel" name="periodLabel">
         <property name="text">
-         <string/>
+         <string>Срок размещения (мес)</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="depAmount">
+      <item row="9" column="0">
+       <widget class="QLabel" name="endAmountLabel">
         <property name="text">
-         <string>Сумма вклада:</string>
+         <string>Сумма на вкладе к концу срока:</string>
         </property>
        </widget>
       </item>
@@ -38,17 +38,87 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="periodLabel">
+      <item row="4" column="0">
+       <widget class="QLabel" name="payFrequencyLabel">
         <property name="text">
-         <string>Срок размещения (мес)</string>
+         <string>Периодичность выплат:</string>
         </property>
        </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="reset">
+        <property name="text">
+         <string>A/C</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0">
+        <property name="spacing">
+         <number>-1</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <item>
+         <widget class="QLabel" name="periodStartInputLabel">
+          <property name="text">
+           <string>Дата начала -&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="periodStartInput">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="periodStartInputButton">
+          <property name="text">
+           <string>PushButton</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item row="6" column="0">
        <widget class="QLabel" name="refillListLabel">
         <property name="text">
          <string>Список пополнений:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="periodEndInputLabel">
+          <property name="text">
+           <string>Дата конца -&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="periodEndInput">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="periodEndInputButton">
+          <property name="text">
+           <string>PushButton</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="8" column="1">
+       <widget class="QLabel" name="AccruedIntOutput">
+        <property name="text">
+         <string/>
         </property>
        </widget>
       </item>
@@ -62,73 +132,11 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="3">
-       <widget class="QWidget" name="widget_2" native="true"/>
-      </item>
-      <item row="3" column="1">
-       <widget class="QComboBox" name="interRateBox">
-        <item>
-         <property name="text">
-          <string>Фиксированная</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="payFrequencyLabel">
-        <property name="text">
-         <string>Периодичность выплат:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="0">
-       <widget class="QLabel" name="endAmountLabel">
-        <property name="text">
-         <string>Сумма на вкладе к концу срока:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="interRateLabel">
-        <property name="text">
-         <string>Процентная ставка:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLineEdit" name="periodEndInput"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="periodEndInputButton">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
       <item row="4" column="1">
        <widget class="QComboBox" name="payFrequencyBox">
         <item>
          <property name="text">
-          <string>Каждый день</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Каждую неделю</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
           <string>Раз в месяц</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Раз в квартал</string>
          </property>
         </item>
         <item>
@@ -148,6 +156,13 @@
         </item>
        </widget>
       </item>
+      <item row="5" column="1">
+       <widget class="QCheckBox" name="capitalization">
+        <property name="text">
+         <string>Капитализация процентов</string>
+        </property>
+       </widget>
+      </item>
       <item row="4" column="2">
        <widget class="QLabel" name="label">
         <property name="text">
@@ -155,10 +170,17 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="1">
-       <widget class="QCheckBox" name="capitalization">
+      <item row="0" column="0">
+       <widget class="QLabel" name="depAmount">
         <property name="text">
-         <string>Капитализация процентов</string>
+         <string>Сумма вклада:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="interRateLabel">
+        <property name="text">
+         <string>Процентная ставка:</string>
         </property>
        </widget>
       </item>
@@ -169,43 +191,16 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
-        <property name="spacing">
-         <number>-1</number>
-        </property>
-        <property name="sizeConstraint">
-         <enum>QLayout::SetDefaultConstraint</enum>
-        </property>
-        <item>
-         <widget class="QLineEdit" name="periodStartInput"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="periodStartInputButton">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="interRateInput"/>
       </item>
       <item row="2" column="1" colspan="2">
        <widget class="QCalendarWidget" name="calendarWidget"/>
       </item>
-      <item row="3" column="2">
-       <widget class="QLineEdit" name="interRateInput"/>
-      </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="reset">
-        <property name="text">
-         <string>A/C</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </item>
     <item>
-     <widget class="QWidget" name="widget" native="true"/>
+     <widget class="QTableWidget" name="tableWidget"/>
     </item>
     <item>
      <widget class="QPushButton" name="equalButton">

@@ -1,6 +1,8 @@
 #ifndef DEPCALC_H
 #define DEPCALC_H
 
+#include <stdio.h>
+
 #include <QDateTimeEdit>
 #include <QMainWindow>
 

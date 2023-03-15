@@ -4,6 +4,7 @@
 #include <depcalc.h>
 #include <graph.h>
 #include <loancalc.h>
+#include <stdio.h>
 
 #include <QAbstractButton>
 #include <QAudioOutput>

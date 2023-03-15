@@ -409,33 +409,17 @@ void annuity (double stavka, double ostat, double mesProc, double procPer){
 }
 
 int ymd_to_mord(char *data) {
-    int year = 0, month = 0, day = 0, dotFlag = 0;
-    char num[256] = {};
-    for(int i = 0; i < 5; i++){
-      strcat(num, data);
-      data++;
-    }
-    year = atoi(num);
-    memset(num, 0, 100);
-    for(int i = 0; i < 3; i++){
-      strcat(num, data);
-      data++;
-    }
-    month = atoi(num);
-    memset(num, 0, 100);
-
-    for(int i = 0; i < 1; i++){
-      strcat(num, data);
-      data++;
-    }
-
-    day = atoi(num);
-    memset(num, 0, 100);
     
-    // printf("%d, %d, %d \n", year, month, day);
+    int y1, m1, d1;
+    if (sscanf(data, "%d.%d.%d", &y1, &m1, &d1) != 3) {
+      printf("poshel naxui!\n");
+      return -1;
+    }
 
-    int a = (14 - month) / 12;
-    int y = year - a;  /* лет с 1 марта 0-го года */
-    int m = month + 12*a - 3;  /* месяцев -"- */
-    return day + (153*m + 2)/5 + 365*y + y/4 - y/100 + y/400;
+    int a = (14 - m1) / 12;
+    int y = y1 - a;  /* лет с 1 марта 0-го года */
+    int m = m1 + 12*a - 3;  /* месяцев -"- */
+    return d1 + (153*m + 2)/5 + 365*y + y/4 - y/100 + y/400;
+
 }
+

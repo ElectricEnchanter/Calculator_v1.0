@@ -92,6 +92,6 @@ void MainWindow::on_pushButton_clicked() {
 }
 
 void MainWindow::on_Deposit_clicked() {
-  depCalc.setWindowTitle("Депозит ДУРНОЙ");
+  depCalc.setWindowTitle("Депозит ДУРНОЙ c=3");
   depCalc.show();
 }
