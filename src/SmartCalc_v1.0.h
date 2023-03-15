@@ -33,5 +33,6 @@ char popOp(Operations **head);
 
 void differential (double stavka, double ostat, double procPer);
 void annuity (double stavka, double ostat, double mesProc, double procPer);
+int ymd_to_mord(char *data);
 
 #endif

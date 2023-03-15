@@ -23,7 +23,6 @@
   <property name="styleSheet">
    <string notr="true">Qwidget {
 background-color:#7B1FA2;
-color: #white;
 font-size: 16pt;
 }
 
@@ -1649,7 +1648,7 @@ background-color: #00796B</string>
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="digit"/>
   <buttongroup name="digit2"/>
+  <buttongroup name="digit"/>
  </buttongroups>
 </ui>
