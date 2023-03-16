@@ -6,6 +6,12 @@
 depcalc::depcalc(QWidget *parent) : QMainWindow(parent), ui(new Ui::depcalc) {
   ui->setupUi(this);
   ui->calendarWidget->hide();
+  ui->calendarWidget_2->hide();
+  ui->calendarWidget_3->hide();
+  ui->RefilWidget->hide();
+  ui->RefilWidget2_2->hide();
+  ui->WithdWidget->hide();
+  ui->WithdWidget2->hide();
 }
 
 depcalc::~depcalc() { delete ui; }
@@ -16,6 +22,10 @@ void depcalc::on_equalButton_clicked() {
   char *inputStart = ar.data();
   QByteArray ar2 = (ui->periodEndInput->text().toLocal8Bit());
   char *inputEnd = ar2.data();
+  QByteArray ar3 = (ui->dateRefilInput->text().toLocal8Bit());
+  char *refill = ar3.data();
+  QByteArray ar4 = (ui->dateWithdInput->text().toLocal8Bit());
+  char *withd = ar4.data();
   double interRate = atof(ui->interRateInput->text().toLocal8Bit());
   //  int data = 0;
   int days = ymd_to_mord(inputEnd) - ymd_to_mord(inputStart) - 1;
@@ -32,6 +42,7 @@ void depcalc::on_equalButton_clicked() {
          << "Начислено процентов"
          << "Вклад пополнен"
          << "Остаток на вкладе";
+
   ui->tableWidget->setColumnCount(4);  // Указываем число колонок
   ui->tableWidget->horizontalHeader()->setSectionResizeMode(
       QHeaderView::Stretch);
@@ -72,7 +83,7 @@ void depcalc::on_equalButton_clicked() {
               i, 3, new QTableWidgetItem(QString::number(depAmount, 'f', 2)));
           payout2 = depAmount2 * (interRate / 100) / 365 * 30;
           depAmount2 += payout2;
-          qDebug() << payout2;
+          //          qDebug() << payout2;
           m += 1;
           if (m > 12) {
             m %= 12;
@@ -84,12 +95,10 @@ void depcalc::on_equalButton_clicked() {
         procents = depAmount * pow(1 + (((interRate / 100) / 1)),
                                    days / 365);  // не правиьныйе проценты
         payoutCount = days / 365 + 1;
-
         ui->tableWidget->setRowCount(payoutCount);
         ui->AccruedIntOutput->setText(QString::number(procents - depAmount));
         ui->endAmountOutput->setText(
             QString::number((procents - depAmount) + depAmount));
-
         for (int i = 0; i <= payoutCount; i++) {
           ui->tableWidget->setItem(
               i, 0,
@@ -169,7 +178,7 @@ void depcalc::on_equalButton_clicked() {
               i, 3, new QTableWidgetItem(QString::number(depAmount2, 'f', 2)));
           payout2 = depAmount2 * (interRate / 100) / 365 * 30;
           depAmount2 += payout2;
-          qDebug() << payout2;
+          //          qDebug() << payout2;
           m += 1;
           if (m > 12) {
             m %= 12;
@@ -249,10 +258,11 @@ void depcalc::on_equalButton_clicked() {
 }
 
 void depcalc::on_periodStartInputButton_clicked() {
-  ui->calendarWidget->show();
+  if (ui->periodStartInputButton->isChecked()) {
+    ui->calendarWidget->show();
+  } else
+    ui->calendarWidget->hide();
 }
-
-void depcalc::on_periodEndInputButton_clicked() { ui->calendarWidget->show(); }
 
 void depcalc::on_calendarWidget_clicked(const QDate &date) {
   if (ui->periodStartInput->text().isEmpty()) {
@@ -267,4 +277,70 @@ void depcalc::on_reset_clicked() {
   ui->periodStartInput->setText("");
   ui->periodEndInput->setText("");
   ui->interRateInput->setText("");
+  ui->AccruedIntOutput->setText("");
+  ui->endAmountOutput->setText("");
+  ui->tableWidget->clear();
+  ui->tableWidget->setRowCount(0);
+}
+
+void depcalc::on_refillButtonShow_clicked() {
+  if (ui->refillButtonShow->isChecked()) {
+    ui->refillButtonShow->setText("- Убрать пополнение");
+    ui->RefilWidget->show();
+    ui->RefilWidget2_2->show();
+  } else {
+    ui->refillButtonShow->setText("+ Добавить пополнение");
+    ui->dateRefilInput->setText("Дата пополнения:");
+    ui->SumRefilInput->setText("");
+    ui->RefilWidget->hide();
+    ui->RefilWidget2_2->hide();
+    ui->calendarWidget_2->hide();
+  }
+}
+
+void depcalc::on_dateRefilInputButton_clicked() {
+  if (ui->dateRefilInputButton->isChecked()) {
+    ui->calendarWidget_2->show();
+  } else
+    ui->calendarWidget_2->hide();
+}
+
+void depcalc::on_calendarWidget_2_clicked(const QDate &date) {
+  ui->dateRefilInput->setText(date.toString("yyyy.MM.dd"));
+  ui->calendarWidget_2->hide();
+}
+
+void depcalc::on_dateWithdInputButton_clicked() {
+  if (ui->dateWithdInputButton->isChecked()) {
+    ui->calendarWidget_3->show();
+  } else
+    ui->calendarWidget_3->hide();
+}
+
+void depcalc::on_withdButtonShow_clicked() {
+  if (ui->withdButtonShow->isChecked()) {
+    ui->withdButtonShow->setText("- Убрать снятие");
+    ui->WithdWidget->show();
+    ui->WithdWidget2->show();
+    ui->calendarWidget_3->hide();
+  } else {
+    ui->withdButtonShow->setText("+ Добавить снятие");
+    ui->dateWithdInput->setText("Дата снятия:");
+    ui->sumWithdInput->setText("");
+    ui->WithdWidget->hide();
+    ui->WithdWidget2->hide();
+    ui->calendarWidget_3->hide();
+  }
+}
+
+void depcalc::on_calendarWidget_3_activated(const QDate &date) {
+  ui->dateWithdInput->setText(date.toString("yyyy.MM.dd"));
+  ui->calendarWidget_3->hide();
+}
+
+void depcalc::on_periodEndInputButton_clicked() {
+  if (ui->periodEndInputButton->isChecked()) {
+    ui->calendarWidget->show();
+  } else
+    ui->calendarWidget->hide();
 }

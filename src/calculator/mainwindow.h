@@ -8,6 +8,7 @@
 
 #include <QAbstractButton>
 #include <QAudioOutput>
+#include <QButtonGroup>
 #include <QMainWindow>
 #include <QMediaPlayer>
 #include <QResource>

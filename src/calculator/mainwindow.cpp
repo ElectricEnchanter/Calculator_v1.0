@@ -21,7 +21,7 @@ void MainWindow::digit_click(QAbstractButton *btm) {
   QString text = btm->text();
   ui->input->setText(ui->input->text() + text);
   player->setAudioOutput(audioOutput);
-  player->setSource(QUrl("qrc:/sound/RIP EARS ORGASM.mp3"));
+  player->setSource(QUrl("qrc:/sound/come on college boy.mp3"));
   audioOutput->setVolume(50);
   player->play();
 }
@@ -30,7 +30,8 @@ void MainWindow::digit2_click(QAbstractButton *btm) {
   QString text = btm->text();
   ui->input->setText(ui->input->text() + text + '(');
   player->setAudioOutput(audioOutput);
-  player->setSource(QUrl("qrc:/sound/Iam cumming.mp3"));
+  player->setSource(
+      QUrl("qrc:/sound/Fucking slaves get your ass back here.mp3"));
   audioOutput->setVolume(50);
   player->play();
 }

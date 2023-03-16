@@ -6,90 +6,41 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>865</width>
-    <height>636</height>
+    <width>883</width>
+    <height>675</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>PT Sans Caption</family>
+    <pointsize>14</pointsize>
+    <bold>true</bold>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0">
     <item>
-     <layout class="QGridLayout" name="gridLayout" columnstretch="0,2,2">
-      <item row="1" column="0">
-       <widget class="QLabel" name="periodLabel">
-        <property name="text">
-         <string>Срок размещения (мес)</string>
-        </property>
-       </widget>
-      </item>
-      <item row="9" column="0">
-       <widget class="QLabel" name="endAmountLabel">
-        <property name="text">
-         <string>Сумма на вкладе к концу срока:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QLabel" name="withdrawalListLabel">
-        <property name="text">
-         <string>Список снятий:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="payFrequencyLabel">
-        <property name="text">
-         <string>Периодичность выплат:</string>
-        </property>
-       </widget>
-      </item>
+     <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,0,1,1,1,1,0,1,0,1,1" columnstretch="1,3,3,0">
       <item row="0" column="2">
        <widget class="QPushButton" name="reset">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
         <property name="text">
          <string>A/C</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0">
-        <property name="spacing">
-         <number>-1</number>
-        </property>
-        <property name="sizeConstraint">
-         <enum>QLayout::SetDefaultConstraint</enum>
-        </property>
-        <item>
-         <widget class="QLabel" name="periodStartInputLabel">
-          <property name="text">
-           <string>Дата начала:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="periodStartInput">
-          <property name="text">
-           <string/>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="periodStartInputButton">
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="6" column="0">
-       <widget class="QLabel" name="refillListLabel">
-        <property name="text">
-         <string>Список пополнений:</string>
         </property>
        </widget>
       </item>
@@ -97,6 +48,16 @@
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QLabel" name="periodEndInputLabel">
+          <property name="font">
+           <font>
+            <family>PT Sans Caption</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #FFFFFF;</string>
+          </property>
           <property name="text">
            <string>Дата конца:</string>
           </property>
@@ -104,6 +65,16 @@
         </item>
         <item>
          <widget class="QLabel" name="periodEndInput">
+          <property name="font">
+           <font>
+            <family>PT Sans Caption</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #FFFFFF;</string>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -114,32 +85,75 @@
         </item>
         <item>
          <widget class="QPushButton" name="periodEndInputButton">
+          <property name="font">
+           <font>
+            <family>PT Sans Caption</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #FFFFFF;</string>
+          </property>
           <property name="text">
            <string>PushButton</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
        </layout>
       </item>
-      <item row="8" column="1">
+      <item row="10" column="1">
        <widget class="QLabel" name="AccruedIntOutput">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
         <property name="text">
          <string/>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="depAmountInput"/>
-      </item>
-      <item row="8" column="0">
-       <widget class="QLabel" name="AccruedIntLabel">
+      <item row="11" column="1">
+       <widget class="QLabel" name="endAmountOutput">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
         <property name="text">
-         <string>Начисленные проценты:</string>
+         <string/>
         </property>
        </widget>
       </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QCalendarWidget" name="calendarWidget"/>
+      </item>
       <item row="4" column="1">
        <widget class="QComboBox" name="payFrequencyBox">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
         <item>
          <property name="text">
           <string>Раз в месяц</string>
@@ -157,47 +171,509 @@
         </item>
        </widget>
       </item>
-      <item row="5" column="1">
-       <widget class="QCheckBox" name="capitalization">
-        <property name="text">
-         <string>Капитализация процентов</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="0">
        <widget class="QLabel" name="depAmount">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
         <property name="text">
          <string>Сумма вклада:</string>
         </property>
        </widget>
       </item>
+      <item row="6" column="0">
+       <widget class="QPushButton" name="refillButtonShow">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
+        <property name="text">
+         <string>+ Добавить пополнение</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QCheckBox" name="capitalization">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
+        <property name="text">
+         <string>Капитализация процентов</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="interRateInput">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1" colspan="2">
+       <widget class="QCalendarWidget" name="calendarWidget_2">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </item>
       <item row="3" column="0">
        <widget class="QLabel" name="interRateLabel">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
         <property name="text">
          <string>Процентная ставка:</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="1">
-       <widget class="QLabel" name="endAmountOutput">
+      <item row="11" column="0">
+       <widget class="QLabel" name="endAmountLabel">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
         <property name="text">
-         <string/>
+         <string>Сумма на вкладе к концу срока:</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
-       <widget class="QLineEdit" name="interRateInput"/>
+      <item row="4" column="0">
+       <widget class="QLabel" name="payFrequencyLabel">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
+        <property name="text">
+         <string>Периодичность выплат:</string>
+        </property>
+       </widget>
       </item>
-      <item row="2" column="1" colspan="2">
-       <widget class="QCalendarWidget" name="calendarWidget"/>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="depAmountInput">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0">
+        <property name="spacing">
+         <number>-1</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <item>
+         <widget class="QLabel" name="periodStartInputLabel">
+          <property name="font">
+           <font>
+            <family>PT Sans Caption</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #FFFFFF;</string>
+          </property>
+          <property name="text">
+           <string>Дата начала:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="periodStartInput">
+          <property name="font">
+           <font>
+            <family>PT Sans Caption</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #FFFFFF;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="periodStartInputButton">
+          <property name="font">
+           <font>
+            <family>PT Sans Caption</family>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #FFFFFF;</string>
+          </property>
+          <property name="text">
+           <string>PushButton</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="periodLabel">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
+        <property name="text">
+         <string>Срок размещения:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="AccruedIntLabel">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
+        <property name="text">
+         <string>Начисленные проценты:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QPushButton" name="withdButtonShow">
+        <property name="font">
+         <font>
+          <family>PT Sans Caption</family>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #FFFFFF;</string>
+        </property>
+        <property name="text">
+         <string> + Добавить снятие</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1" colspan="2">
+       <widget class="QCalendarWidget" name="calendarWidget_3"/>
+      </item>
+      <item row="8" column="1">
+       <widget class="QWidget" name="WithdWidget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QComboBox" name="withdTypeBox">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Разовое</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Раз в месяц</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Раз в год</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="dateWithdInput">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+           <property name="text">
+            <string>Дата снятия:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QWidget" name="RefilWidget" native="true">
+        <layout class="QHBoxLayout" name="Refil" stretch="0,0">
+         <item>
+          <widget class="QComboBox" name="replTypeBox">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Разовое</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Раз в месяц</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Раз в год</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="dateRefilInput">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+           <property name="text">
+            <string>Дата пополнения:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QWidget" name="RefilWidget2_2" native="true">
+        <layout class="QHBoxLayout" name="RefilWidget2">
+         <item>
+          <widget class="QPushButton" name="dateRefilInputButton">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+           <property name="text">
+            <string>PushButton</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="SumRefilLabel">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+           <property name="text">
+            <string>Сумма:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="SumRefilInput">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="8" column="2">
+       <widget class="QWidget" name="WithdWidget2" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QPushButton" name="dateWithdInputButton">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+           <property name="text">
+            <string>PushButton</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="SumdWithdLabel">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+           <property name="text">
+            <string>Сумма:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="sumWithdInput">
+           <property name="font">
+            <font>
+             <family>PT Sans Caption</family>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: #FFFFFF;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </item>
      </layout>
     </item>
     <item>
-     <widget class="QTableWidget" name="tableWidget"/>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="styleSheet">
+       <string notr="true">color: #FFFFFF;</string>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QPushButton" name="equalButton">
+      <property name="font">
+       <font>
+        <family>PT Sans Caption</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #FFFFFF;</string>
+      </property>
       <property name="text">
        <string>Расчет</string>
       </property>
