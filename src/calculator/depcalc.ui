@@ -63,7 +63,7 @@
         <item>
          <widget class="QLabel" name="periodStartInputLabel">
           <property name="text">
-           <string>Дата начала -&gt;</string>
+           <string>Дата начала:</string>
           </property>
          </widget>
         </item>
@@ -71,6 +71,9 @@
          <widget class="QLabel" name="periodStartInput">
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -95,7 +98,7 @@
         <item>
          <widget class="QLabel" name="periodEndInputLabel">
           <property name="text">
-           <string>Дата конца -&gt;</string>
+           <string>Дата конца:</string>
           </property>
          </widget>
         </item>
@@ -103,6 +106,9 @@
          <widget class="QLabel" name="periodEndInput">
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -141,11 +147,6 @@
         </item>
         <item>
          <property name="text">
-          <string>Раз в полгода</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
           <string>Раз в год</string>
          </property>
         </item>
@@ -160,13 +161,6 @@
        <widget class="QCheckBox" name="capitalization">
         <property name="text">
          <string>Капитализация процентов</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>TextLabel</string>
         </property>
        </widget>
       </item>

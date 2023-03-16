@@ -33,6 +33,8 @@ void depcalc::on_equalButton_clicked() {
          << "Вклад пополнен"
          << "Остаток на вкладе";
   ui->tableWidget->setColumnCount(4);  // Указываем число колонок
+  ui->tableWidget->horizontalHeader()->setSectionResizeMode(
+      QHeaderView::Stretch);
 
   ui->tableWidget->setShowGrid(true);  // Включаем сетку
   ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -45,28 +47,141 @@ void depcalc::on_equalButton_clicked() {
   //  ui->tableWidget->resizeColumnsToContents();
 
   if (!ui->capitalization->checkState()) {
-    procents = (depAmount * interRate * days / 365) / 100;
-    ui->AccruedIntOutput->setText(QString::number(procents));
-    ui->endAmountOutput->setText(QString::number(depAmount));
+    switch (ui->payFrequencyBox->currentIndex()) {
+      case 0:
+        procents = (depAmount * interRate * days / 365) / 100;
+        ui->AccruedIntOutput->setText(QString::number(procents));
+        ui->endAmountOutput->setText(QString::number(depAmount));
+        payoutCount = days / 30;
+
+        ui->tableWidget->setRowCount(payoutCount + 1);
+        for (int i = 0; i <= payoutCount; i++) {
+          ui->tableWidget->setItem(
+              i, 0,
+              new QTableWidgetItem(QString::number(y) + '.' +
+                                   QString::number(m) + '.' +
+                                   QString::number(d)));
+          if (i != 0) {
+            ui->tableWidget->setItem(
+                i, 1, new QTableWidgetItem(QString::number(payout2, 'f', 2)));
+            ui->tableWidget->setItem(i, 2, new QTableWidgetItem("0.00"));
+          } else
+            ui->tableWidget->setItem(
+                i, 2, new QTableWidgetItem(QString::number(depAmount, 'f', 2)));
+          ui->tableWidget->setItem(
+              i, 3, new QTableWidgetItem(QString::number(depAmount, 'f', 2)));
+          payout2 = depAmount2 * (interRate / 100) / 365 * 30;
+          depAmount2 += payout2;
+          qDebug() << payout2;
+          m += 1;
+          if (m > 12) {
+            m %= 12;
+            y++;
+          }
+        }
+        break;
+      case 1:
+        procents = depAmount * pow(1 + (((interRate / 100) / 1)),
+                                   days / 365);  // не правиьныйе проценты
+        payoutCount = days / 365 + 1;
+
+        ui->tableWidget->setRowCount(payoutCount);
+        ui->AccruedIntOutput->setText(QString::number(procents - depAmount));
+        ui->endAmountOutput->setText(
+            QString::number((procents - depAmount) + depAmount));
+
+        for (int i = 0; i <= payoutCount; i++) {
+          ui->tableWidget->setItem(
+              i, 0,
+              new QTableWidgetItem(QString::number(y) + '.' +
+                                   QString::number(m) + '.' +
+                                   QString::number(d)));
+          if (i != 0) {
+            ui->tableWidget->setItem(
+                i, 1, new QTableWidgetItem(QString::number(payout2, 'f', 2)));
+            ui->tableWidget->setItem(i, 2, new QTableWidgetItem("0.00"));
+          } else
+            ui->tableWidget->setItem(
+                i, 2, new QTableWidgetItem(QString::number(depAmount, 'f', 2)));
+          ui->tableWidget->setItem(
+              i, 3, new QTableWidgetItem(QString::number(depAmount, 'f', 2)));
+          depAmount2 = depAmount2 + (depAmount2 * (interRate / 100));
+          payout = depAmount2 - depAmount;
+          payout2 = payout - payout2;
+          y++;
+        }
+        break;
+      case 2:
+        procents = (depAmount * interRate * days / 365) / 100;
+        ui->AccruedIntOutput->setText(QString::number(procents));
+        ui->endAmountOutput->setText(QString::number(depAmount + procents));
+        payoutCount = 2;
+        ui->tableWidget->setRowCount(payoutCount);
+        for (int i = 0; i <= payoutCount; i++) {
+          ui->tableWidget->setItem(
+              i, 0,
+              new QTableWidgetItem(QString::number(y) + '.' +
+                                   QString::number(m) + '.' +
+                                   QString::number(d)));
+          if (i != 0) {
+            ui->tableWidget->setItem(
+                i, 1, new QTableWidgetItem(QString::number(procents, 'f', 2)));
+            ui->tableWidget->setItem(i, 2, new QTableWidgetItem("0.00"));
+          } else
+            ui->tableWidget->setItem(
+                i, 2, new QTableWidgetItem(QString::number(depAmount, 'f', 2)));
+          ui->tableWidget->setItem(
+              i, 3, new QTableWidgetItem(QString::number(depAmount, 'f', 2)));
+
+          y = y1;
+          m = m1;
+          d = d1;
+        }
+        break;
+    }
+
   } else {
     switch (ui->payFrequencyBox->currentIndex()) {
       case 0:
         procents = depAmount * pow(1 + (((interRate / 100) / 12)), days / 30);
+        payoutCount = days / 30;
+
+        ui->tableWidget->setRowCount(payoutCount + 1);
         ui->AccruedIntOutput->setText(
             QString::number(procents - depAmount, 'f', 2));
         ui->endAmountOutput->setText(
             QString::number((procents - depAmount) + depAmount, 'f', 2));
+        for (int i = 0; i <= payoutCount; i++) {
+          ui->tableWidget->setItem(
+              i, 0,
+              new QTableWidgetItem(QString::number(y) + '.' +
+                                   QString::number(m) + '.' +
+                                   QString::number(d)));
+          if (i != 0) {
+            ui->tableWidget->setItem(
+                i, 1, new QTableWidgetItem(QString::number(payout2, 'f', 2)));
+            ui->tableWidget->setItem(
+                i, 2, new QTableWidgetItem(QString::number(payout2, 'f', 2)));
+          } else
+            ui->tableWidget->setItem(
+                i, 2, new QTableWidgetItem(QString::number(payout, 'f', 2)));
+          ui->tableWidget->setItem(
+              i, 3, new QTableWidgetItem(QString::number(depAmount2, 'f', 2)));
+          payout2 = depAmount2 * (interRate / 100) / 365 * 30;
+          depAmount2 += payout2;
+          qDebug() << payout2;
+          m += 1;
+          if (m > 12) {
+            m %= 12;
+            y++;
+          }
+        }
         break;
+
       case 1:
-        procents = depAmount * pow(1 + (((interRate / 100) / 2)), days / 182);
-        ui->AccruedIntOutput->setText(
-            QString::number(procents - depAmount, 'f', 2));
-        ui->endAmountOutput->setText(
-            QString::number((procents - depAmount) + depAmount, 'f', 2));
-        break;
-      case 2:
         procents = depAmount * pow(1 + (((interRate / 100) / 1)), days / 365);
         payoutCount = days / 365 + 1;
+
         ui->tableWidget->setRowCount(payoutCount);
         ui->AccruedIntOutput->setText(QString::number(procents - depAmount));
         ui->endAmountOutput->setText(
@@ -95,7 +210,7 @@ void depcalc::on_equalButton_clicked() {
           y++;
         }
         break;
-      case 3:
+      case 2:
         procents = (depAmount * interRate * days / 365) / 100;
         ui->AccruedIntOutput->setText(QString::number(procents));
         ui->endAmountOutput->setText(QString::number(depAmount + procents));
