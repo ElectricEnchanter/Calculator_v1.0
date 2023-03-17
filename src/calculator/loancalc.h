@@ -31,6 +31,10 @@ class loanCalc : public QMainWindow {
 
   void on_equal_clicked();
 
+  void on_closeButton_clicked();
+
+  void on_eraseButton_clicked();
+
  private:
   Ui::loanCalc *ui;
 };

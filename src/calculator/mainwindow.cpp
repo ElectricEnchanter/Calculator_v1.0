@@ -20,20 +20,11 @@ MainWindow::~MainWindow() { delete ui; }
 void MainWindow::digit_click(QAbstractButton *btm) {
   QString text = btm->text();
   ui->input->setText(ui->input->text() + text);
-  player->setAudioOutput(audioOutput);
-  player->setSource(QUrl("qrc:/sound/come on college boy.mp3"));
-  audioOutput->setVolume(50);
-  player->play();
 }
 
 void MainWindow::digit2_click(QAbstractButton *btm) {
   QString text = btm->text();
   ui->input->setText(ui->input->text() + text + '(');
-  player->setAudioOutput(audioOutput);
-  player->setSource(
-      QUrl("qrc:/sound/Fucking slaves get your ass back here.mp3"));
-  audioOutput->setVolume(50);
-  player->play();
 }
 
 void MainWindow::on_AC_clicked() {
@@ -48,7 +39,6 @@ void MainWindow::on_equal_clicked() {
   if (*input == '\0') err = 8;
   QByteArray ssstr = ui->XInput->text().toLocal8Bit();
   double Dot = atof(ssstr);
-  // if (*ssstr == '\0') err = 8;
 
   Numbers *NumHead = NULL;
   Operations *OpHead = NULL;
@@ -81,12 +71,12 @@ void MainWindow::on_Graph_clicked() {
 }
 
 void MainWindow::on_Credit_clicked() {
-  loanCalc.setWindowTitle("КРЕДИТ ДУРНОЙ");
+  loanCalc.setWindowTitle("КРЕДИТНЫЙ");
   loanCalc.show();
 }
 
 void MainWindow::on_Deposit_clicked() {
-  depCalc.setWindowTitle("Депозит ДУРНОЙ c=3");
+  depCalc.setWindowTitle("ДЕПОЗИТНЫЙ");
   depCalc.show();
 }
 

@@ -68,3 +68,5 @@ void Dialog::on_pushButton_clicked() {
   ui->input->setText("");
   ui->Xinput->setText("");
 }
+
+void Dialog::on_exit_clicked() { this->close(); }

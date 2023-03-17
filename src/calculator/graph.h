@@ -29,6 +29,8 @@ class Dialog : public QDialog {
 
   void on_pushButton_clicked();
 
+  void on_exit_clicked();
+
  private:
   Ui::Dialog *ui;
   double xBegin, xEnd, h, X;

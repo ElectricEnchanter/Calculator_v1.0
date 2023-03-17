@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>815</width>
+    <width>817</width>
     <height>531</height>
    </rect>
   </property>
@@ -42,7 +42,7 @@
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -75,7 +75,7 @@
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -112,6 +112,9 @@
            <bold>true</bold>
           </font>
          </property>
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
+         </property>
          <property name="styleSheet">
           <string notr="true">color: #FFFFFF;
 background-color: #00796B</string>
@@ -122,6 +125,12 @@ background-color: #00796B</string>
          <property name="icon">
           <iconset resource="../../assets/icons/icons.qrc">
            <normaloff>:/backspace.png</normaloff>:/backspace.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -166,7 +175,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -199,7 +208,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
          </property>
@@ -238,9 +247,12 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">color: #FFFFFF;
@@ -248,6 +260,16 @@ background-color: #00796B</string>
          </property>
          <property name="text">
           <string>Построить</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../assets/icons/icons.qrc">
+           <normaloff>:/calculate.png</normaloff>:/calculate.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -297,12 +319,32 @@ background-color: #00796B</string>
      </item>
      <item>
       <widget class="QPushButton" name="exit">
+       <property name="font">
+        <font>
+         <family>PT Sans Caption</family>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
        <property name="styleSheet">
         <string notr="true">color: #FFFFFF;
 background-color: #00796B</string>
        </property>
        <property name="text">
         <string>Выйти</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../assets/icons/icons.qrc">
+         <normaloff>:/close.png</normaloff>:/close.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -321,22 +363,5 @@ background-color: #00796B</string>
  <resources>
   <include location="../../assets/icons/icons.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>exit</sender>
-   <signal>clicked()</signal>
-   <receiver>Dialog</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>292</x>
-     <y>395</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>583</x>
-     <y>392</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

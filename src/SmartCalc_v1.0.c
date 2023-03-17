@@ -346,73 +346,10 @@ char popOp(Operations **head) {
   return res;
 }
 
-
-void differential (double stavka, double ostat, double procPer){
-    double platOsnDolg = ostat / procPer;
-    double procents = (ostat * stavka/100 * (365/12.0)) / 365;
-    double procents2 = procents;
-    double ostat2 = ostat;
-    double dolg = 0;
-    //procents = floor(floor(procents)/100) * 100;
-    //double procents = (ostat - platOsnDolg * (procPer - 1)) * stavka/100;
-    
-    //printf("%f\n", procents);
-    
-    double sumPlate = platOsnDolg + procents;
-    ostat -= platOsnDolg;
-    printf("√рафик погашени€:\n");
-    
-    for(int i = 1; ostat > 0, i <= procPer; i++) {
-        dolg += procents;
-        printf("ћес€ц: %d —умма платежа: %.2lf ќсновной долг: %.2lf ѕроценты: %.2lf ќстаток: %.2f\n", i, (sumPlate*100)/100, (platOsnDolg*100)/100, (procents*100)/100, ostat );
-        
-        procents = (ostat * stavka/100 * (365/12.0)) / 365;
-        //procents = floor(floor(procents)/100) * 100;
-        sumPlate = platOsnDolg + procents;
-        
-        ostat -= platOsnDolg;
-    }
-    
-    printf("\nПлатеж мес: %.2f\n", platOsnDolg);
-    printf("ѕереплата: %.2f\n", dolg);
-    printf("ƒолг + проценты: %.2f\n", dolg + ostat2);
-    
-    
-}
-
-void annuity (double stavka, double ostat, double mesProc, double procPer){
-    double sumPlate = ostat * (mesProc / (1 - (pow(1 + mesProc, - procPer))));
-            sumPlate = round(sumPlate*100)/100;
-    double pereplata = (sumPlate * procPer) - ostat;
-    printf("ѕлатеж мес: %.2f\n", sumPlate);
-    printf("ѕереплата: %.2f\n", pereplata);
-    printf("ƒолг + проценты: %.2f\n", pereplata + ostat);
-    
-    printf("\n\n√рафик погашени€:\n");
-    
-    double platOsnDolg = sumPlate - (ostat / 100);
-    double procents = ostat * ((stavka / 100) / 12);
-    
-    ///printf("ѕереплата: %f\n", procents);
-    ostat -= sumPlate - (ostat / 100);
-    
-    for(int i = 1; ostat > 0, i <= procPer; i++) {
-        
-        printf("ћес€ц: %d —умма платежа: %.2lf ќсновной долг: %.2lf ѕроценты: %.2lf ќстаток: %.2f\n", i, (sumPlate*100)/100, (platOsnDolg*100)/100, (procents*100)/100, ostat );
-        platOsnDolg = sumPlate - (ostat / 100);
-        procents = ostat * ((stavka / 100) / 12);
-        ostat -= platOsnDolg;
-        //procents = ostat / 100;
-        round(ostat*100)/100;
-        
-    }
-}
-
 int ymd_to_mord(char *data) {
     
     int y1, m1, d1;
     if (sscanf(data, "%d.%d.%d", &y1, &m1, &d1) != 3) {
-      printf("poshel naxui!\n");
       return -1;
     }
 

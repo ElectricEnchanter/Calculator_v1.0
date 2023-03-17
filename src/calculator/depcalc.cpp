@@ -19,9 +19,10 @@ void depcalc::on_equalButton_clicked() {
   QByteArray ar2 = (ui->periodEndInput->text().toLocal8Bit());
   char *inputEnd = ar2.data();
 
-  if (ui->depAmountInput->text().isEmpty() &&
-      ui->interRateInput->text().isEmpty() &&
-      !isdigit(ymd_to_mord(inputStart)) && !isdigit(ymd_to_mord(inputEnd))) {
+  if (ui->depAmountInput->text().isEmpty() ||
+      ui->interRateInput->text().isEmpty() ||
+      ui->periodStartInput->text() == "yyyy.mm.dd" ||
+      ui->interRateInput->text() == "yyyy.mm.dd") {
     ui->statusbar->showMessage("Данные введены не полностью");
   } else {
     ui->statusbar->showMessage("");
@@ -301,3 +302,5 @@ void depcalc::on_reset_clicked() {
   ui->periodEndInput->setStyleSheet("color:#00796B");
   ui->statusbar->showMessage("");
 }
+
+void depcalc::on_closeButton_clicked() { this->close(); }

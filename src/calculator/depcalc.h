@@ -32,6 +32,8 @@ class depcalc : public QMainWindow {
 
   void on_periodEndInputButton_clicked();
 
+  void on_closeButton_clicked();
+
  private:
   Ui::depcalc *ui;
 };

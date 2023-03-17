@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>495</width>
-    <height>520</height>
+    <width>529</width>
+    <height>487</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -352,11 +352,14 @@ background-color:#888;
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
           </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">color: #FFFFFF;
@@ -382,11 +385,14 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
           </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">color: #FFFFFF;
@@ -412,11 +418,14 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
           </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::RightToLeft</enum>
          </property>
          <property name="styleSheet">
           <string notr="true">color: #FFFFFF;
@@ -473,6 +482,7 @@ background-color: #00796B</string>
           </property>
           <property name="font">
            <font>
+            <family>PT Sans Caption</family>
             <pointsize>24</pointsize>
             <italic>false</italic>
             <bold>true</bold>
@@ -602,7 +612,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -636,7 +646,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -670,7 +680,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -704,7 +714,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -738,7 +748,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -772,7 +782,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -806,7 +816,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -840,7 +850,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -874,7 +884,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -908,7 +918,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -942,7 +952,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -976,7 +986,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -1010,7 +1020,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -1056,7 +1066,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -1090,7 +1100,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -1159,7 +1169,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -1193,7 +1203,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -1224,7 +1234,7 @@ border:none</string>
           <property name="font">
            <font>
             <family>PT Sans Caption</family>
-            <pointsize>14</pointsize>
+            <pointsize>16</pointsize>
             <italic>false</italic>
             <bold>true</bold>
             <kerning>true</kerning>
@@ -1346,7 +1356,7 @@ border:none</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1375,7 +1385,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1404,7 +1414,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1433,7 +1443,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1462,7 +1472,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1491,7 +1501,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1520,7 +1530,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1549,7 +1559,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1578,7 +1588,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1613,7 +1623,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1632,7 +1642,7 @@ background-color: #00796B</string>
          <property name="font">
           <font>
            <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>true</kerning>
@@ -1660,7 +1670,7 @@ background-color: #00796B</string>
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="digit"/>
   <buttongroup name="digit2"/>
+  <buttongroup name="digit"/>
  </buttongroups>
 </ui>
