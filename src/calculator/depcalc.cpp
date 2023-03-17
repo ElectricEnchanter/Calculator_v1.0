@@ -19,8 +19,6 @@ void depcalc::on_equalButton_clicked() {
   QByteArray ar2 = (ui->periodEndInput->text().toLocal8Bit());
   char *inputEnd = ar2.data();
 
-  qDebug() << ymd_to_mord(inputEnd);
-  qDebug() << ymd_to_mord(inputStart);
   if (ui->depAmountInput->text().isEmpty() &&
       ui->interRateInput->text().isEmpty() &&
       !isdigit(ymd_to_mord(inputStart)) && !isdigit(ymd_to_mord(inputEnd))) {
@@ -85,7 +83,6 @@ void depcalc::on_equalButton_clicked() {
                 i, 3, new QTableWidgetItem(QString::number(depAmount, 'f', 2)));
             payout2 = depAmount2 * (interRate / 100) / 365 * 30;
             depAmount2 += payout2;
-            qDebug() << payout2;
             m += 1;
             if (m > 12) {
               m %= 12;
@@ -182,7 +179,6 @@ void depcalc::on_equalButton_clicked() {
                 new QTableWidgetItem(QString::number(depAmount2, 'f', 2)));
             payout2 = depAmount2 * (interRate / 100) / 365 * 30;
             depAmount2 += payout2;
-            qDebug() << payout2;
             m += 1;
             if (m > 12) {
               m %= 12;

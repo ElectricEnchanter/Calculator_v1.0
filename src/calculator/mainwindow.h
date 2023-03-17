@@ -49,7 +49,9 @@ class MainWindow : public QMainWindow {
 
   void on_Deposit_clicked();
 
-  void on_pushButton_clicked();
+  void on_addFuncButton_valueChanged(int value);
+
+  void on_addAdededPartsButton_clicked();
 
  private:
   Ui::MainWindow *ui;

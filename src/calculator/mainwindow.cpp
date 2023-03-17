@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
   ui->groupBox->hide();
+  ui->groupBox2->hide();
   player = new QMediaPlayer;
   audioOutput = new QAudioOutput;
   connect(ui->digit, &QButtonGroup::buttonClicked, this,
@@ -84,14 +85,21 @@ void MainWindow::on_Credit_clicked() {
   loanCalc.show();
 }
 
-void MainWindow::on_pushButton_clicked() {
-  if (ui->pushButton->isChecked())
+void MainWindow::on_Deposit_clicked() {
+  depCalc.setWindowTitle("Депозит ДУРНОЙ c=3");
+  depCalc.show();
+}
+
+void MainWindow::on_addFuncButton_valueChanged(int value) {
+  if (value == 1)
     ui->groupBox->show();
   else
     ui->groupBox->hide();
 }
 
-void MainWindow::on_Deposit_clicked() {
-  depCalc.setWindowTitle("Депозит ДУРНОЙ c=3");
-  depCalc.show();
+void MainWindow::on_addAdededPartsButton_clicked() {
+  if (ui->addAdededPartsButton->isChecked())
+    ui->groupBox2->show();
+  else
+    ui->groupBox2->hide();
 }

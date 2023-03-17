@@ -9,7 +9,7 @@ else
   LIBS=-lcheck 
 endif
 
-all: run
+all: install run
 
 run: install
 	build/Calculator.app/Contents/MacOS/Calculator
@@ -33,9 +33,12 @@ install:
 	mkdir -p build
 	qmake6 calculator/calculator.pro -o build/Makefile
 	cd build; make > /dev/zero 2> /dev/zero
+	mkdir -p ~/Applications ; cp -r build/Calculator.app ~/Applications/Calculator.app
+
 
 uninstall:
 	rm -rf build
+	rm -rf ~/Applications/Calculator.app
 
 dist:
 	cd .. && tar -czvf SmartCalc_v1.0.tar src
