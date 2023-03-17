@@ -4,6 +4,7 @@
 
 Dialog::Dialog(QWidget *parent) : QDialog(parent), ui(new Ui::Dialog) {
   ui->setupUi(this);
+  ui->Xinput->setValidator(new QIntValidator(0, 1000, this));
 
   h = 0.0001;
 

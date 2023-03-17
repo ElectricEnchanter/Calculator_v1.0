@@ -24,6 +24,7 @@ void depcalc::on_equalButton_clicked() {
       !isdigit(ymd_to_mord(inputStart)) && !isdigit(ymd_to_mord(inputEnd))) {
     ui->statusbar->showMessage("Данные введены не полностью");
   } else {
+    ui->statusbar->showMessage("");
     double depAmount = atof(ui->depAmountInput->text().toLocal8Bit());
     double interRate = atof(ui->interRateInput->text().toLocal8Bit());
 
@@ -296,6 +297,7 @@ void depcalc::on_reset_clicked() {
   ui->interRateInput->setText("");
   ui->periodStartInput->setText("yyyy.mm.dd");
   ui->periodEndInput->setText("yyyy.mm.dd");
-  ui->periodStartInput->setStyleSheet("color:#808080");
-  ui->periodEndInput->setStyleSheet("color:#808080");
+  ui->periodStartInput->setStyleSheet("color:#00796B");
+  ui->periodEndInput->setStyleSheet("color:#00796B");
+  ui->statusbar->showMessage("");
 }

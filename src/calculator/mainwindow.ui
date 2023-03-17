@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>436</width>
+    <width>495</width>
     <height>520</height>
    </rect>
   </property>
@@ -67,66 +67,6 @@ background-color:#888;
        <property name="spacing">
         <number>-1</number>
        </property>
-       <item>
-        <widget class="QPushButton" name="Credit">
-         <property name="font">
-          <font>
-           <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
-           <italic>false</italic>
-           <bold>true</bold>
-           <kerning>true</kerning>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
-         </property>
-         <property name="text">
-          <string>Кредит</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../assets/icons/icons.qrc">
-           <normaloff>:/credit_card.png</normaloff>:/credit_card.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Deposit">
-         <property name="font">
-          <font>
-           <family>PT Sans Caption</family>
-           <pointsize>14</pointsize>
-           <italic>false</italic>
-           <bold>true</bold>
-           <kerning>true</kerning>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
-         </property>
-         <property name="text">
-          <string>Депозит</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../assets/icons/icons.qrc">
-           <normaloff>:/savings.png</normaloff>:/savings.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
-       </item>
        <item>
         <widget class="QPushButton" name="Graph">
          <property name="palette">
@@ -428,6 +368,66 @@ background-color: #00796B</string>
          <property name="icon">
           <iconset resource="../../assets/icons/icons.qrc">
            <normaloff>:/monitoring.png</normaloff>:/monitoring.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Credit">
+         <property name="font">
+          <font>
+           <family>PT Sans Caption</family>
+           <pointsize>14</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: #FFFFFF;
+background-color: #00796B</string>
+         </property>
+         <property name="text">
+          <string>Кредит</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../assets/icons/icons.qrc">
+           <normaloff>:/credit_card.png</normaloff>:/credit_card.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Deposit">
+         <property name="font">
+          <font>
+           <family>PT Sans Caption</family>
+           <pointsize>14</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: #FFFFFF;
+background-color: #00796B</string>
+         </property>
+         <property name="text">
+          <string>Депозит</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../assets/icons/icons.qrc">
+           <normaloff>:/savings.png</normaloff>:/savings.png</iconset>
          </property>
          <property name="iconSize">
           <size>

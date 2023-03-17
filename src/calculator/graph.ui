@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>814</width>
+    <width>815</width>
     <height>531</height>
    </rect>
   </property>
@@ -117,7 +117,11 @@
 background-color: #00796B</string>
          </property>
          <property name="text">
-          <string>AC</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../../assets/icons/icons.qrc">
+           <normaloff>:/backspace.png</normaloff>:/backspace.png</iconset>
          </property>
         </widget>
        </item>
@@ -314,7 +318,9 @@ background-color: #00796B</string>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../assets/icons/icons.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>exit</sender>

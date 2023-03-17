@@ -58,7 +58,5 @@ class MainWindow : public QMainWindow {
   Dialog dialog;
   loanCalc loanCalc;
   depcalc depCalc;
- signals:
-  void aboba();
 };
 #endif  // MAINWINDOW_H
