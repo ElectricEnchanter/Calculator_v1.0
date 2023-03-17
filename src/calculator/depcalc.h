@@ -30,18 +30,6 @@ class depcalc : public QMainWindow {
 
   void on_reset_clicked();
 
-  void on_refillButtonShow_clicked();
-
-  void on_dateRefilInputButton_clicked();
-
-  void on_calendarWidget_2_clicked(const QDate &date);
-
-  void on_dateWithdInputButton_clicked();
-
-  void on_withdButtonShow_clicked();
-
-  void on_calendarWidget_3_activated(const QDate &date);
-
   void on_periodEndInputButton_clicked();
 
  private:

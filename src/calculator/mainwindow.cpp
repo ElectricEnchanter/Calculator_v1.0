@@ -8,7 +8,6 @@ MainWindow::MainWindow(QWidget *parent)
   ui->groupBox->hide();
   player = new QMediaPlayer;
   audioOutput = new QAudioOutput;
-
   connect(ui->digit, &QButtonGroup::buttonClicked, this,
           &MainWindow::digit_click);
   connect(ui->digit2, &QButtonGroup::buttonClicked, this,
