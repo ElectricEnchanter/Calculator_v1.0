@@ -1,24 +1,32 @@
-#🧮 **Calculator**
-It's a casual Ping Pong game in terminal.\
-It's a co-op game so this can be played in two or one right in the console (Isn't that cool?). \
-In the game you can choose black and white or color game mode as well as choose how many points the game will last.
+<p align="center">
+      <img src="https://i.ibb.co/GPs6FRK/1.png" width="726">
+</p>
 
-___
+<p align="center">
+   <img src="https://img.shields.io/badge/QT%20Version-6.2.3-brightgreen" alt="QT Version">
+   <img src="https://img.shields.io/badge/App%20Version-1.0-blue" alt="App Version">
+</p>
 
-# 🎮 **How to play?**
-You have two ways:
+# 🧮 **About**
+This application is written in C using the Qt framework.
 
-First is you create new object file by using Makefile:
+It's a usual calculator with some ususual featuries. \
+It contains loan calculator, deposit calculator and even function graph. \
+It can plot mathematical expressions. \
+It can calculate the interest and the balance of the loan. \
+It can calculate interest on the amount of the deposit.
+
+# 🖥 **How to install?**
+
+You need to create a new object file by using Makefile:
 1. Clone this repo to your local mashine.
 2. Go to src directory.
 3. Run MAKEFILE.
 4. Enjoy!
 
-And second is just run Pong.exe file
-1. Clone this repo to your local mashine.
-2. Run Pong.exe.
+# 🧑🏼‍💻 **Developers**
 
-___
+- [dionecary](https://github.com/PulpuDev)
 
 # 📭 **My contacts**
 ✉️ E-mail: paranzind@mail.ru
