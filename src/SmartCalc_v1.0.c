@@ -116,8 +116,24 @@ void counting(char pop, Numbers **NumHead) {
 }
 
 int Validator(char *string, char *output) {
+  regex_t reg;
   int err = 0, DotFlag = 0, open = 0, close = 0;
-
+  // char *pattern = {"[=,weyupdfhjkzvbmА-Яа-яЁё]"};
+  char *pattern = {"[^.cosintaqrtlgx()^%/*-+0-9]"};
+  int status = 0;
+  regcomp(&reg, pattern, REG_EXTENDED);
+  if (regexec(&reg, string, 0, NULL, 0) == 0) {
+    err = 10;
+    return err;
+  } else
+    err = 0;
+  for (int i = 0; i < 6; i++) {
+    if (*string == '+') err++;
+    if (err == 5) {
+      err = 10;
+      return err;
+    }
+  }
   if (*string == '-') {
     strncat(output, "~", 1);
     string++;
@@ -145,10 +161,19 @@ int Validator(char *string, char *output) {
     }
 
     while (!isdigit(*string)) {
+      if (*string == '.') return err = 10;
       strncat(output, " ", 1);
       DotFlag = 0;
       if (*string == '\0') break;
       switch (*string) {
+        case 'o':
+        case 'i':
+        case 'n':
+        case 'q':
+        case 'r':
+        case 'g':
+          err = 10;
+          break;
         case 'x':
           strncat(output, "x", 1);
           break;
@@ -271,21 +296,7 @@ int Validator(char *string, char *output) {
       if (err != 0) break;
     }
   }
-  if (open != close)
-    err = 2;
-  else {
-    int tmperr = err;
-    while (*output != '\0') {
-      if ((isdigit(*output) || *output == 'x') && tmperr == 0) {
-        err = 0;
-        break;
-      } else if (*output == ' ')
-        err = 6;
-      else
-        err = 6;
-      output++;
-    }
-  }
+  if (open != close) err = 2;
   return err;
 }
 
@@ -347,16 +358,13 @@ char popOp(Operations **head) {
 }
 
 int ymd_to_mord(char *data) {
-    
-    int y1, m1, d1;
-    if (sscanf(data, "%d.%d.%d", &y1, &m1, &d1) != 3) {
-      return -1;
-    }
+  int y1, m1, d1;
+  if (sscanf(data, "%d.%d.%d", &y1, &m1, &d1) != 3) {
+    return -1;
+  }
 
-    int a = (14 - m1) / 12;
-    int y = y1 - a;  /* лет с 1 марта 0-го года */
-    int m = m1 + 12*a - 3;  /* месяцев -"- */
-    return d1 + (153*m + 2)/5 + 365*y + y/4 - y/100 + y/400;
-
+  int a = (14 - m1) / 12;
+  int y = y1 - a;          /* лет с 1 марта 0-го года */
+  int m = m1 + 12 * a - 3; /* месяцев -"- */
+  return d1 + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400;
 }
-

@@ -4,7 +4,6 @@
 
 Dialog::Dialog(QWidget *parent) : QDialog(parent), ui(new Ui::Dialog) {
   ui->setupUi(this);
-  ui->Xinput->setValidator(new QIntValidator(0, 1000, this));
 
   h = 0.0001;
 
@@ -22,21 +21,22 @@ Dialog::~Dialog() { delete ui; }
 
 void Dialog::on_build_clicked() {
   int err = 0;
-
   QByteArray sstr = ui->input->text().toLocal8Bit();
   char *input = sstr.data();
-  sstr = ui->Xinput->text().toLocal8Bit();
-  double Dot = atof(sstr);
+  if (*input == '\0') err = 8;
+  QByteArray ssstr = ui->Xinput->text().toLocal8Bit();
+  double Dot = atof(ssstr);
+
+  Numbers *NumHead = NULL;
+  Operations *OpHead = NULL;
   char output[255] = {""};
-  err = Validator(input, output);
+
+  if (err == 0) err = Validator(input, output);
   ui->widget->xAxis->setRange(-Dot, Dot);
   ui->widget->yAxis->setRange(-Dot, Dot);
-
   ui->widget->clearGraphs();
   x.clear();
   y.clear();
-  Numbers *NumHead = NULL;
-  Operations *OpHead = NULL;
 
   if (err == 0 && Dot != 0) {
     for (X = -Dot; X <= fabs(Dot); X += h) {
@@ -51,17 +51,19 @@ void Dialog::on_build_clicked() {
     ui->widget->graph(0)->addData(x, y);
     ui->widget->replot();
   } else if (err == 1)
-    ui->input->setText("ОШИБКА: Нет числа после точки или 2 точки в числе");
+    ui->input->setText("Нет числа после точки или 2 точки в числе");
   else if (err == 2)
-    ui->input->setText("ОШИБКА: Не правильное количество скобок");
+    ui->input->setText("Не правильное количество скобок");
   else if (err == 3)
-    ui->input->setText("ОШИБКА: Скобки пустые");
+    ui->input->setText("Скобки пустые");
   else if (err == 4)
-    ui->input->setText("ОШИБКА: После знака нет числа");
+    ui->input->setText("После знака нет числа");
   else if (err == 5)
-    ui->input->setText("ОШИБКА: X не число");
+    ui->input->setText("X не число");
   else if (err == 6 || Dot == 0)
-    ui->input->setText("ОШИБКА: Запись не имеет смысла");
+    ui->input->setText("Запись не имеет смысла");
+  else if (err == 10 || Dot == 0)
+    ui->input->setText("INVALID CHARACTER(S)");
 }
 
 void Dialog::on_pushButton_clicked() {

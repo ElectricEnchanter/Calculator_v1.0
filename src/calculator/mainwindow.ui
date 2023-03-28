@@ -362,8 +362,16 @@ background-color:#888;
           <enum>Qt::RightToLeft</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>График</string>
@@ -395,8 +403,16 @@ background-color: #00796B</string>
           <enum>Qt::RightToLeft</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>Кредит</string>
@@ -428,8 +444,16 @@ background-color: #00796B</string>
           <enum>Qt::RightToLeft</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>Депозит</string>
@@ -619,7 +643,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>/</string>
@@ -653,7 +682,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>8</string>
@@ -687,7 +721,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>4</string>
@@ -721,7 +760,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>7</string>
@@ -755,7 +799,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>0</string>
@@ -789,7 +838,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>.</string>
@@ -823,7 +877,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>2</string>
@@ -857,7 +916,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>6</string>
@@ -891,7 +955,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>3</string>
@@ -925,7 +994,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>%</string>
@@ -959,7 +1033,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>9</string>
@@ -993,7 +1072,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>1</string>
@@ -1027,7 +1111,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>5</string>
@@ -1073,7 +1162,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>*</string>
@@ -1107,7 +1201,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>+</string>
@@ -1141,7 +1240,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string/>
@@ -1176,7 +1280,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>-</string>
@@ -1210,7 +1319,12 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>=</string>
@@ -1241,7 +1355,14 @@ border:none</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color:#009688</string>
+           <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color:#009688
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00796B
+}</string>
           </property>
           <property name="text">
            <string>^</string>
@@ -1292,7 +1413,12 @@ border:none</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:#009688</string>
+             <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
             </property>
             <property name="text">
              <string>(</string>
@@ -1303,6 +1429,9 @@ border:none</string>
               <height>15</height>
              </size>
             </property>
+            <attribute name="buttonGroup">
+             <string notr="true">digit</string>
+            </attribute>
            </widget>
           </item>
           <item>
@@ -1323,7 +1452,12 @@ border:none</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:#009688</string>
+             <string notr="true">QPushButton {
+	background-color:#009688
+}
+QPushButton:pressed {
+	background-color: #00796B
+}</string>
             </property>
             <property name="text">
              <string>)</string>
@@ -1334,6 +1468,9 @@ border:none</string>
               <height>15</height>
              </size>
             </property>
+            <attribute name="buttonGroup">
+             <string notr="true">digit</string>
+            </attribute>
            </widget>
           </item>
          </layout>
@@ -1363,8 +1500,16 @@ border:none</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>acos</string>
@@ -1392,8 +1537,16 @@ background-color: #00796B</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>cos</string>
@@ -1421,8 +1574,16 @@ background-color: #00796B</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>asin</string>
@@ -1450,8 +1611,16 @@ background-color: #00796B</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>sin</string>
@@ -1479,8 +1648,16 @@ background-color: #00796B</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>tan</string>
@@ -1508,8 +1685,16 @@ background-color: #00796B</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>ln</string>
@@ -1537,8 +1722,16 @@ background-color: #00796B</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>atan</string>
@@ -1566,8 +1759,16 @@ background-color: #00796B</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>log</string>
@@ -1595,8 +1796,16 @@ background-color: #00796B</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+          <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
          </property>
          <property name="text">
           <string>sqrt</string>
@@ -1652,7 +1861,8 @@ background-color: #00796B</string>
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: #212121</string>
+          <string notr="true">background-color: #212121;
+border:none</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

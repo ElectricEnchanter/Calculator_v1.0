@@ -24,7 +24,7 @@ gcov_report: tests
 	open coverage.html
 
 style:
-	cp ../materials/linters/.clang-format .
+	cp ../assets/.clang-format .
 	clang-format -i *.c
 	clang-format -n *.c
 	rm .clang-format

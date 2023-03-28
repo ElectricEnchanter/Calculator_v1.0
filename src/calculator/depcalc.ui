@@ -159,8 +159,16 @@
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+           <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
           </property>
           <property name="text">
            <string/>
@@ -341,8 +349,16 @@ background-color: #00796B</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+           <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
           </property>
           <property name="text">
            <string/>
@@ -587,8 +603,16 @@ QCalendarWidget QWidget#qt_calendar_navigationbar
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+         <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
         </property>
         <property name="text">
          <string/>
@@ -618,8 +642,16 @@ background-color: #00796B</string>
          <enum>Qt::RightToLeft</enum>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+         <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
         </property>
         <property name="text">
          <string>Рассчитать</string>
@@ -666,8 +698,16 @@ background-color: #00796B</string>
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #FFFFFF;
-background-color: #00796B</string>
+       <string notr="true">QPushButton {
+	color: #FFFFFF;
+	background-color: #00796B
+}
+QPushButton:pressed {
+	color: #FFFFFF;
+	background-color: #00645A
+}
+
+</string>
       </property>
       <property name="text">
        <string>Выйти</string>
