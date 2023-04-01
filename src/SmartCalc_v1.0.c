@@ -118,7 +118,7 @@ void counting(char pop, Numbers **NumHead) {
 int Validator(char *string, char *output) {
   regex_t reg;
   int err = 0, DotFlag = 0, open = 0, close = 0;
-  char *pattern = {"[^-%/*+.cosintaqrtlgx()0-9]"};
+  char *pattern = {"[^^-%/*+.cosintaqrtlgx()0-9]"};
   regcomp(&reg, pattern, REG_EXTENDED);
   if (regexec(&reg, string, 0, NULL, 0) == 0) return err = 1;
 
@@ -147,20 +147,21 @@ int Validator(char *string, char *output) {
       if (DotFlag > 1) err = 1;
       string++;
     }
+
     while (!isdigit(*string)) {
+      if (*string == '+' || *string == '-' || *string == '*' ||
+          *string == '/' || *string == '%') {
+        string++;
+        if (*string == '\0')
+          err = 1;
+        else
+          string--;
+      }
       if (*string == '.') return err = 1;
       strncat(output, " ", 1);
       DotFlag = 0;
       if (*string == '\0') break;
       switch (*string) {
-        case 'o':
-        case 'i':
-        case 'n':
-        case 'q':
-        case 'r':
-        case 'g':
-          err = 1;
-          break;
         case 'x':
           strncat(output, "x", 1);
           break;
