@@ -118,22 +118,10 @@ void counting(char pop, Numbers **NumHead) {
 int Validator(char *string, char *output) {
   regex_t reg;
   int err = 0, DotFlag = 0, open = 0, close = 0;
-  // char *pattern = {"[=,weyupdfhjkzvbmА-Яа-яЁё]"};
-  char *pattern = {"[^.cosintaqrtlgx()^%/*-+0-9]"};
-  int status = 0;
+  char *pattern = {"[^-%/*+.cosintaqrtlgx()0-9]"};
   regcomp(&reg, pattern, REG_EXTENDED);
-  if (regexec(&reg, string, 0, NULL, 0) == 0) {
-    err = 10;
-    return err;
-  } else
-    err = 0;
-  for (int i = 0; i < 6; i++) {
-    if (*string == '+') err++;
-    if (err == 5) {
-      err = 10;
-      return err;
-    }
-  }
+  if (regexec(&reg, string, 0, NULL, 0) == 0) return err = 1;
+
   if (*string == '-') {
     strncat(output, "~", 1);
     string++;
@@ -159,9 +147,8 @@ int Validator(char *string, char *output) {
       if (DotFlag > 1) err = 1;
       string++;
     }
-
     while (!isdigit(*string)) {
-      if (*string == '.') return err = 10;
+      if (*string == '.') return err = 1;
       strncat(output, " ", 1);
       DotFlag = 0;
       if (*string == '\0') break;
@@ -172,7 +159,7 @@ int Validator(char *string, char *output) {
         case 'q':
         case 'r':
         case 'g':
-          err = 10;
+          err = 1;
           break;
         case 'x':
           strncat(output, "x", 1);
@@ -223,32 +210,24 @@ int Validator(char *string, char *output) {
           string--;
           if (*string == '(') {
             strncat(output, " ", 1);
-            string++;
           } else if (*string == '+' || *string == '-' || *string == '*' ||
-                     *string == '/' || *string == '%')
-            err = 4;
-          else {
+                     *string == '/' || *string == '%') {
+            err = 1;
+          } else {
             strncat(output, "+", 1);
-            string++;
           }
           string++;
-          if (*string == '+' || *string == '-' || *string == '*' ||
-              *string == '/' || *string == '%' || *string == '\0') {
-            err = 4;
-          }
-          string--;
           break;
         case '-':
           string--;
           if (*string == '+' || *string == '-' || *string == '*' ||
-              *string == '/' || *string == '%')
-            err = 4;
-          else if (*string == '(') {
+              *string == '/' || *string == '%') {
+            err = 1;
+          } else if (*string == '(') {
             strncat(output, "~", 1);
           } else
             strncat(output, "-", 1);
           string++;
-
           break;
         case '*':
         case '/':
@@ -256,10 +235,10 @@ int Validator(char *string, char *output) {
         case '^':
           string++;
           if (*string == '\0') {
-            err = 4;
+            err = 1;
           } else if (*string == '+' || *string == '-' || *string == '*' ||
                      *string == '/' || *string == '%')
-            err = 4;
+            err = 1;
           else if (*string == '(')
             string--;
           else
@@ -278,12 +257,12 @@ int Validator(char *string, char *output) {
           string++;
           if (*string == '+' || *string == '*' || *string == '^' ||
               *string == '/' || *string == '%' || *string == '.')
-            err = 6;
+            err = 1;
           string--;
           break;
         case ')':
           string--;
-          if (*string == '(') err = 3;
+          if (*string == '(') err = 1;
           string++;
           if (*string == ')') {
             strncat(output, ")", 1);
@@ -296,7 +275,7 @@ int Validator(char *string, char *output) {
       if (err != 0) break;
     }
   }
-  if (open != close) err = 2;
+  if (open != close) err = 1;
   return err;
 }
 

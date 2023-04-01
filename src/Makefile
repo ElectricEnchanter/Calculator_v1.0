@@ -36,7 +36,7 @@ install:
 	mkdir -p ~/Applications ; cp -r build/Calculator.app ~/Applications/Calculator.app
 
 
-uninstall:
+uninstall: clean
 	rm -rf build
 	rm -rf ~/Applications/Calculator.app
 

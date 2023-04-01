@@ -61,16 +61,6 @@ void MainWindow::on_equal_clicked() {
     else
       ui->input->setText(QString::number(num, 'f', 2));
   } else if (err == 1)
-    ui->input->setText("Нет числа после точки или 2 точки в числе");
-  else if (err == 2)
-    ui->input->setText("Не правильное количество скобок");
-  else if (err == 3)
-    ui->input->setText("Скобки пустые");
-  else if (err == 4)
-    ui->input->setText("После знака нет числа");
-  else if (err == 5)
-    ui->input->setText("X не число");
-  else if (err == 10)
     ui->input->setText("INVALID CHARACTER(S)");
 }
 
