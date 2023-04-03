@@ -29,12 +29,11 @@ style:
 	clang-format -n *.c
 	rm .clang-format
 
-install:
+install: uninstall
 	mkdir -p build
 	qmake6 calculator/calculator.pro -o build/Makefile
 	cd build; make > /dev/zero 2> /dev/zero
 	mkdir -p ~/Applications ; cp -r build/Calculator.app ~/Applications/Calculator.app
-
 
 uninstall: clean
 	rm -rf build
@@ -45,6 +44,3 @@ dist:
 
 clean:
 	rm -rf *o *a *out *css *html SmartCalc_v1.0_test.c build*
-
-dvi:
-	cd calculator && open dvi.html
