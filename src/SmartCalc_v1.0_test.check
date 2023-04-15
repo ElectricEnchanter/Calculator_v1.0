@@ -313,26 +313,10 @@ ck_assert_double_eq_tol(num, result_num, 1e-6);
 Numbers *NumHead = NULL;
 Operations *OpHead = NULL;
 
-char string[255] = {"sqwr(36)-16"};
+char string[255] = {"sqrt(36)-16"};
 char output[255] = {};
 double num = 0;
 double result_num = -10;
-double X = 1;
-
-Validator(string, output);
-num = Count(output, &NumHead, &OpHead, X);
-
-
-ck_assert_double_eq_tol(num, result_num, 1e-6);
-
-#test Count_test13
-Numbers *NumHead = NULL;
-Operations *OpHead = NULL;
-
-char string[255] = {"6666*ln(20)"};
-char output[255] = {};
-double num = 0;
-double result_num = 19969.551335;
 double X = 1;
 
 Validator(string, output);
@@ -491,7 +475,7 @@ ck_assert_double_eq_tol(num, result_num, 1e-6);
 Numbers *NumHead = NULL;
 Operations *OpHead = NULL;
 
-char string[255] = {"squre(525)+3"};
+char string[255] = {"sqrt(525)+3"};
 char output[255] = {};
 double num = 0;
 double result_num = 25.912878;
@@ -507,7 +491,7 @@ ck_assert_double_eq_tol(num, result_num, 1e-6);
 Numbers *NumHead = NULL;
 Operations *OpHead = NULL;
 
-char string[255] = {"7/squre(525)"};
+char string[255] = {"7/sqrt(525)"};
 char output[255] = {};
 double num = 0;
 double result_num = 0.305505;

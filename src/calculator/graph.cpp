@@ -51,7 +51,7 @@ void Dialog::on_build_clicked() {
     ui->widget->graph(0)->addData(x, y);
     ui->widget->replot();
   } else if (err == 1)
-    ui->input->setText("Нет числа после точки или 2 точки в числе");
+    ui->input->setText("INVALID CHARACTER(S)");
   else if (err == 2)
     ui->input->setText("Не правильное количество скобок");
   else if (err == 3)

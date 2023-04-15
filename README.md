@@ -26,7 +26,7 @@ You need to create a new object file by using Makefile:
 
 # 🧑🏼‍💻 **Developers**
 
-- [dionecary](https://github.com/PulpuDev)
+- [dionecar](https://github.com/PulpuDev)
 
 # 📭 **My contacts**
 ✉️ E-mail: paranzind@mail.ru

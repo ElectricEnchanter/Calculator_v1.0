@@ -118,7 +118,8 @@ void counting(char pop, Numbers **NumHead) {
 int Validator(char *string, char *output) {
   regex_t reg;
   int err = 0, DotFlag = 0, open = 0, close = 0;
-  char *pattern = {"[^^-%/*+.cosintaqrtlgx()0-9]"};
+  char *pattern = {"[^-/ %.cosintaqrtlgx()^/*+0-9]"};
+
   regcomp(&reg, pattern, REG_EXTENDED);
   if (regexec(&reg, string, 0, NULL, 0) == 0) return err = 1;
 

@@ -390,7 +390,7 @@ QPushButton:pressed {
         </property>
         <property name="icon">
          <iconset resource="../../assets/icons/icons.qrc">
-          <normaloff>:/icon.icns</normaloff>:/icon.icns</iconset>
+          <normaloff>:/calculate.png</normaloff>:/calculate.png</iconset>
         </property>
         <property name="iconSize">
          <size>
